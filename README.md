@@ -27,42 +27,14 @@ The code for this step is contained in the `Feature Extraction` section of the I
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
-
-```python
-import matplotlib.image as mpimg
-import matplotlib.pyplot as plt
-img = mpimg.imread('output_images/image1.png')
-fig,ax = plt.subplots(1, figsize=(10,10))
-ax.imshow(img)
-# Turn off tick labels
-ax.set_yticklabels([])
-ax.set_xticklabels([])
-ax.axis('off')
-plt.show()
-```
-
-
-![png](output_3_0.png)
+![png](./output_images/output_3_0.png)
 
 
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
 
 Here is an example using the `YCrCb` color space and HOG parameters of `orientations=9`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
-
-```python
-img = mpimg.imread('output_images/image2.png')
-fig,ax = plt.subplots(1, figsize=(10,10))
-ax.imshow(img)
-# Turn off tick labels
-ax.set_yticklabels([])
-ax.set_xticklabels([])
-ax.axis('off')
-plt.show()
-```
-
-
-![png](output_5_0.png)
+![png](./output_images/output_5_0.png)
 
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
@@ -91,98 +63,33 @@ window overlap of 75% produces results with less false negatives (50% is the oth
 scales of 1, 1.5, 2, 2.5, 3, 3.5 are explored to find 3, 3.5 not adding enough value in detecting cars.
 
 
-```python
-img = mpimg.imread('output_images/image3.png')
-fig,ax = plt.subplots(1, figsize=(10,10))
-ax.imshow(img)
-# Turn off tick labels
-ax.set_yticklabels([])
-ax.set_xticklabels([])
-ax.axis('off')
-plt.show()
-img = mpimg.imread('output_images/image4.png')
-fig,ax = plt.subplots(1, figsize=(10,10))
-ax.imshow(img)
-# Turn off tick labels
-ax.set_yticklabels([])
-ax.set_xticklabels([])
-ax.axis('off')
-plt.show()
-img = mpimg.imread('output_images/image5.png')
-fig,ax = plt.subplots(1, figsize=(10,10))
-ax.imshow(img)
-# Turn off tick labels
-ax.set_yticklabels([])
-ax.set_xticklabels([])
-ax.axis('off')
-plt.show()
-img = mpimg.imread('output_images/image6.png')
-fig,ax = plt.subplots(1, figsize=(10,10))
-ax.imshow(img)
-# Turn off tick labels
-ax.set_yticklabels([])
-ax.set_xticklabels([])
-ax.axis('off')
-plt.show()
-img = mpimg.imread('output_images/image7.png')
-fig,ax = plt.subplots(1, figsize=(10,10))
-ax.imshow(img)
-# Turn off tick labels
-ax.set_yticklabels([])
-ax.set_xticklabels([])
-ax.axis('off')
-plt.show()
-```
-
-
-![png](output_10_0.png)
+![png](./output_images/output_10_0.png)
 
 
 
-![png](output_10_1.png)
+![png](./output_images/output_10_1.png)
 
 
 
-![png](output_10_2.png)
+![png](./output_images/output_10_2.png)
 
 
 
-![png](output_10_3.png)
+![png](./output_images/output_10_3.png)
 
 
 
-![png](output_10_4.png)
+![png](./output_images/output_10_4.png)
 
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result. Here are some example images:
 
-
-```python
-img = mpimg.imread('output_images/image8.png')
-fig,ax = plt.subplots(1, figsize=(10,10))
-ax.imshow(img)
-# Turn off tick labels
-ax.set_yticklabels([])
-ax.set_xticklabels([])
-ax.axis('off')
-plt.show()
-img = mpimg.imread('output_images/image9.png')
-fig,ax = plt.subplots(1, figsize=(10,10))
-ax.imshow(img)
-# Turn off tick labels
-ax.set_yticklabels([])
-ax.set_xticklabels([])
-ax.axis('off')
-plt.show()
-```
-
-
-![png](output_12_0.png)
+![png](./output_images/output_12_0.png)
 
 
 
-![png](output_12_1.png)
+![png](./output_images/output_12_1.png)
 
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
@@ -195,56 +102,17 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 ### Here are six frames and their corresponding heatmaps:
 
-
-```python
-img = mpimg.imread('output_images/image10.png')
-fig,ax = plt.subplots(1, figsize=(20,20))
-ax.imshow(img)
-# Turn off tick labels
-ax.set_yticklabels([])
-ax.set_xticklabels([])
-ax.axis('off')
-plt.show()
-```
-
-
-![png](output_14_0.png)
+![png](./output_images/output_14_0.png)
 
 
 ### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
 
-
-```python
-img = mpimg.imread('output_images/image11.png')
-fig,ax = plt.subplots(1, figsize=(20,20))
-ax.imshow(img)
-# Turn off tick labels
-ax.set_yticklabels([])
-ax.set_xticklabels([])
-ax.axis('off')
-plt.show()
-```
-
-
-![png](output_16_0.png)
+![png](./output_images/output_16_0.png)
 
 
 ### Here the resulting bounding boxes are drawn onto the last frame in the series:
 
-
-```python
-img = mpimg.imread('output_images/image12.png')
-fig,ax = plt.subplots(1, figsize=(20,20))
-ax.imshow(img)
-# Turn off tick labels
-ax.set_yticklabels([])
-ax.set_xticklabels([])
-ax.axis('off')
-plt.show()
-```
-
-
-![png](output_18_0.png)
+![png](./output_images/output_18_0.png)
 
 
 ---
