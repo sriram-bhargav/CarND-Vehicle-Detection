@@ -83,13 +83,16 @@ scales of 1, 1.5, 2, 2.5, 3, 3.5 are explored to find 3, 3.5 not adding enough v
 
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
-Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result. Here are some example images:
+Ultimately I used YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result. Here are some example images:
 
 ![png](./output_images/output_12_0.png)
 
 
-
 ![png](./output_images/output_12_1.png)
+
+Higher heatmap threshold values underestimate the size of the vehicle, so reducing the threshold improved performance of vehicle detection.
+
+Also, using 3 channels in YCrCb maximized the accuracy of linear SVM model. Other optimization techniques included changes to window sizing and overlap as described above.
 
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
