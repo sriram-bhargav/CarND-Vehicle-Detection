@@ -122,11 +122,11 @@ Here's an example result showing the heatmap from a series of frames of video, t
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 Issues (current + potential):
-    * False positives exist in the some of frames in the video (i.e., we displayed bounding box in the frame when there is no vehicle at that position.
-    * Bounding box computed doesn't fit the vehicle completely.
-    * False negatives exist in some frames (i.e., we couldn't find vehicle or didn't display bounding box around the the vehicle).
-    * Bounding box dimentions changes abruptly b/n consecutive frames.
-    * Single bounding box is displayed when two or more vehicles are closer to each other.
+   * False positives exist in the some of frames in the video (i.e., we displayed bounding box in the frame when there is no vehicle at that position.
+   * Bounding box computed doesn't fit the vehicle completely.
+   * False negatives exist in some frames (i.e., we couldn't find vehicle or didn't display bounding box around the the vehicle).
+   * Bounding box dimentions changes abruptly b/n consecutive frames.
+   * Single bounding box is displayed when two or more vehicles are closer to each other.
     
 Potential solutions:
    * More training data and/or better learning algorithm (i.e., non-linear SVM) can be used to decrease false positives and false negatives.
