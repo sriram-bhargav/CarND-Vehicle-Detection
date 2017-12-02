@@ -94,6 +94,8 @@ Higher heatmap threshold values underestimate the size of the vehicle, so reduci
 
 Also, using 3 channels in YCrCb maximized the accuracy of linear SVM model. Other optimization techniques included changes to window sizing and overlap as described above.
 
+---
+### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
 https://youtu.be/UHIpwPkdL3E
