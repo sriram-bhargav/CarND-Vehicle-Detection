@@ -49,7 +49,7 @@ The code for this step is contained in the `Extract and Combine features`, `Norm
 
 linear SVM is used to train the model using HOG, spatial and color histogram features (functions defined in `Feature Extraction` section).
 
-Acheived test accuracy of 0.9994
+Acheived test accuracy of 0.9997
 
 ### Sliding Window Search
 
