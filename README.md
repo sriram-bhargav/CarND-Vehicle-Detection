@@ -129,13 +129,11 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 Issues (current + potential):
    * False positives exist in the some of frames in the video (i.e., we displayed bounding box in the frame when there is no vehicle at that position.
-   * Bounding box computed doesn't fit the vehicle completely.
+   * Bounding box computed doesn't fit the vehicle completely, in some cases.
    * False negatives exist in some frames (i.e., we couldn't find vehicle or didn't display bounding box around the the vehicle).
-   * Bounding box dimentions changes abruptly b/n consecutive frames.
    * Single bounding box is displayed when two or more vehicles are closer to each other.
     
 Potential solutions:
    * More training data and/or better learning algorithm (i.e., non-linear SVM) can be used to decrease false positives and false negatives.
    * Better sliding window sizes can be found to fit vehicles correctly.
-   * Bounding box regions computed in previous frames can be used to restrict the sliding window region for finding new bounding boxes for existing vehicles in the frame (for smooth detection of vehicles).
    * Adaptive thresholding method can be used when two or more vehicles are moving together on road.
