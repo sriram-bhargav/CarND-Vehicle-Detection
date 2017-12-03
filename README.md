@@ -87,9 +87,6 @@ Ultimately I used YCrCb 3-channel HOG features plus spatially binned color and h
 
 ![png](./output_images/output_12_0.png)
 
-
-![png](./output_images/output_12_1.png)
-
 Higher heatmap threshold values underestimate the size of the vehicle, so reducing the threshold improved performance of vehicle detection.
 
 Also, using 3 channels in YCrCb maximized the accuracy of linear SVM model. Other optimization techniques included changes to window sizing and overlap as described above.
