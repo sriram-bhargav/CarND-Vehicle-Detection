@@ -98,7 +98,7 @@ Also, using 3 channels in YCrCb maximized the accuracy of linear SVM model. Othe
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-https://youtu.be/UHIpwPkdL3E
+https://youtu.be/mWkwf5X1MTM
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 I recorded the positions of positive detections in each frame of the video.  From the positive detections I created a heatmap 
